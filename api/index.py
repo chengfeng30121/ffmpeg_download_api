@@ -71,7 +71,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "使用说明(目前暂不支持浏览器, 请使用爬虫查看)\n\n本api仅收录最新版本的ffmpeg, 如要老版本请自行下载(也许以后会...?)\n本项目完全公益, 未收任何人的一针一线, 开发费用全由我个人承担, 请不要盗刷流量, 谢谢\nGithub: https://github.com/chengfeng30121/ffmpeg_download_api\n\n====================\nURL: /list_version/\nMethods: (GET)\nUsage: 返回一个ffmpeg列表\n====================\n"
+    return {"Code": 200, "Message": "使用说明(目前暂不支持浏览器, 请使用爬虫查看)\n\n本api仅收录最新版本的ffmpeg, 如要老版本请自行下载(也许以后会...?)\n本项目完全公益, 未收任何人的一针一线, 开发费用全由我个人承担, 请不要盗刷流量, 谢谢\nGithub: https://github.com/chengfeng30121/ffmpeg_download_api\n\n====================\nURL: /list_version/\nMethods: (GET)\nUsage: 返回一个ffmpeg列表\n====================\n"}
 
 @app.route("/list_version")
 def list_version():
