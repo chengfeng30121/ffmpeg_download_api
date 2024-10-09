@@ -11,7 +11,7 @@ import os
 def _get_info() -> dict:
     if os.path.exists("info.json") and debug:
         return json.loads(open("info.json").read())
-    url = "https://api.github.com/BtbN/FFmpeg-Builds/releases/latest"
+    url = "https://api.github.com/repos/BtbN/FFmpeg-Builds/releases/latest"
     response = requests.get(url)
     json_data = response.json()
     print(json_data)
@@ -76,7 +76,6 @@ def index():
 @app.route("/list_version")
 def list_version():
     json_data = _get_info()
-    return json_data
     raw_datas = []
     for raw_data in json_data["assets"]:
         raw_datas.append((raw_data["name"], raw_data["browser_download_url"]))
