@@ -76,6 +76,7 @@ def index():
 @app.route("/list_version")
 def list_version():
     json_data = _get_info()
+    return json_data
     raw_datas = []
     for raw_data in json_data["assets"]:
         raw_datas.append((raw_data["name"], raw_data["browser_download_url"]))
