@@ -13,7 +13,9 @@ def _get_info() -> dict:
         return json.loads(open("info.json").read())
     url = "https://api.github.com/BtbN/FFmpeg-Builds/releases/latest"
     response = requests.get(url)
-    return response.json()
+    json_data = response.json()
+    print(json_data)
+    return json_data
 
 def progress_version(filenames: [(str, str), ...]) -> list:
     data = []
